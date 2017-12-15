@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.dactive {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+margin-left: 60px;
+}
+
+.flex-container>div {
+  background-color: #2E2E2E;
+  height: 430px;
+  width: 390px;
+  margin: 10px;
+  
+  line-height: 75px;
+  font-size: 30px;
+}
+
+.slideshow-container{
+ 
+    position: relative;
+    margin: auto;
+
+}
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color:white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.next{
+    right: 8px;
+    border-radius: 3px 0 0 3px;
+    color: black;
+ 
+}
+.prev{
+    left:  8px;
+    border-radius: 3px 0 0 3px;
+    color: black;
+  
+}
+.mySlides{
+    text-align: center;
+    height: 500px;
+}
+.text{
+    color: #f2f2f2;
+    font-size: 22px;
+    padding: 8px 12px;
+    position: relative;
+    bottom: 90px;
+}
+.dot{
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color:0.6s ease;
+}
+.active, dot:hover{
+    background-color: white;
+}
+.text-block {
+  font-family: "system-ui";
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+   
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 300px;
+    margin-right: 880px;
+}
+.parallax {
+    /* The image used */
+    background-image: url("http://ap.imagensbrasil.org/images/site-background.jpg");
+
+    /* Set a specific height */
+    /*min-height: 500px; */height: 100%;
+    width: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.button {
+  z-index: 1000;
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.pp {
+    background-color: #4CAF50;
+    color: white;
+}
+        a.knopka {
+
+  color: #fff; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: rgb(212,75,56); /* фон кнопки */
+  padding: .3em 1em; /* отступ от текста */
+  outline: none; /* убирать контур в Mozilla */
+  border-radius: 5px;
+} 
+.tt{
+  z-index: 2000;
+}
+a.knopka:hover { background: rgb(232,95,76); } /* при наведении курсора мышки */
+a.knopka:active { background: rgb(152,15,0); } /* при нажатии */
+@import "compass/css3";
+.pp:nth-child(even){background-color: #f2f2f2}
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+  <div style="height: 40px;">
+  <a href="index.html" class="dactive">Home</a>
+  <a href="news.html">News</a>
+  <a href="about.html">About</a>
+  
+  <div class="w3-container">
+ 
+    <button  style="margin-left: 1212px;   margin-top: -90px; height: 69px;" onclick="document.getElementById('id01').style.display='block'" id="checkout" class="w3-button w3-white"><img style="width: 100%; height: 63px; " src="http://subastralinc.com/blog/wp-content/uploads/2017/08/Cart.jpg"></button>
+<div class="w3-container">
+  <div id="id01" class="w3-modal">
+    <div style="min-height:400px; " class="w3-modal-content">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id01').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h2 id="myModalLabel">Ваш заказ:</h2>
+      </header>
+       
+        <a href="#" id="clear_cart" style=" position: absolute; margin-top: 280px; margin-left: 700px;" class="knopka">Очистить корзину</a>
+      <div id="cart_content"></div>
+             </div>
+</div></div>
+    </div>
+  </div>
+</div>
+<div class="w3-container">
+    <div class="test">
+      <div class="slidershow-container">
+           <div style="height: 548px;" class="mySlides fade">
+              <img style="height: 610px; margin-left: -50px;  width: 120%;" class="w3-animate-fading" src="http://i01.appmifile.com/webfile/globalimg/en/cms/3B7ED2AE-38CC-8A3F-1B62-C3BDAED6F7B2.jpg" style="width:800px "><div class="text-block"><h1 class="w3-animate-fading">Mi Max 2 Огромный дисплей, огромная батарея</h1></div></div>
+                
+        </div>
+    <div  style="height: 548px;"class="mySlides fade">
+            <img style="height: 610px;  margin-left: -50px;  width: 120%;" class="w3-animate-fading" src="http://i01.appmifile.com/webfile/globalimg/ru/banner/1920x770-banner.jpg" >
+            <div class="text-block">
+    <h1 class="w3-animate-fading">Mi MIX 2</h1>
+    <p style="font-size: 20px;" class="w3-animate-fading">Безрамочный диплей</p>
+  </div>
+        </div>
+   
+    <div style="height: 548px;" class="mySlides fade">
+            <img style="height: 610px; margin-left: -50px;  width: 120%;" class="w3-animate-fading" src="http://i01.appmifile.com/webfile/globalimg/sg/cms/D2.jpg" style="width:800px">
+            <div style="color: black; margin-bottom: 100px; margin-left: 150px;" class="text-block">
+    <h1 class="w3-animate-fading">Redmi Note 5A</h1>
+   <h2 class="w3-animate-fading">Огромный дисплей, 13 Мп камера с быстрой фокусировкой</h2>
+<p class="w3-animate-fading" style="font-size: 20px;"">Огромный дисплей 5.5"
+13 Мп камера с поддержкой PDAF
+Слот для карт памяти microSD
+4-ядерный процессор Snapdragon 425</p>
+  </div>
+
+        </div>
+       <div style="height: 548px;" class="mySlides fade">
+            <img style="border: none; height: 610px;  margin-left: -50px;  width: 120%;" class="w3-animate-fading" src="http://i01.appmifile.com/webfile/globalimg/ru/banner/D6S-PCbanner-3colors.jpg" style="width:800px">
+            <div style="color: black; margin-bottom: 120px; margin-left: 150px;" class="text-block">
+<h1 class="w3-animate-fading"> Redmi Note 5A Prime</h1>
+<h2 class="w3-animate-fading">Фронтальная камера 16 Мп со вспышкой</h2>
+<p class="w3-animate-fading">Фронтальная LED вспышка
+Сканер отпечатков пальцев
+Слот для карт памяти microSD
+8-ядерный процессор Snapdragon 435</p>
+  </div>
+</div>
+        </div>
+        <a onclick="plusSlides(-1)" class="prev">&#10094</a>
+        <a onclick="plusSlides(1)" class="next">&#10095</a>
+    <div style="text-align:center;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+<span class="dot" onclick="currentSlide(4)"></span>
+    </div></div>
+</div> </div></div>
+<div class="parallax">
+<center><p style="margin-bottom: 20px; padding-top: 10px; color: #fff; font-size: 40px;">Лучшие смартфоны Xiaomi</p></center>
+<div class="flex-container">
+
+
+
+<div style="margin-top: 40px;" class="item_box">
+<button title="добавить в корзину" id="add_item" data-id="1" class="button" style="background-color: teal; z-index: 2000;  height: 20px; margin-top: -30px; position: absolute; border-radius: 5px;"></button><p title="добавить в корзину" style="margin-left: 10px; margin-top: -50px; color: white; z-index: 10000; position: absolute;">+</p>
+  
+  <div><p class="item_title" style="color: white; position: absolute; font-size: 15px; margin-top: -10px; padding-left: 13px;">Xiaomi Redmi Note 5A Prime </p><img style="position: absolute; margin-right: 150px; padding-top: 50px; width: 390px; height: 430px;" src="http://topmira.com/images/7/4/%D1%81%D0%BC%D0%B0%D1%80%D1%82%D1%84%D0%BE%D0%BD%20Xiaomi%20Redmi%20Note%205A%2016GB%20%D1%84%D0%BE%D1%82%D0%BE.jpg"></div></div>
+
+
+
+
+
+
+
+  <div style="margin-top: 40px;" class="item_box">
+ <button title="добавить в корзину" id="add_item" data-id="2" class="button" style="background-color: teal; z-index: 2000;  height: 20px; margin-top: -30px; position: absolute; border-radius: 5px;"></button><p title="добавить в корзину" style="margin-left: 10px; margin-top: -50px; color: white; z-index: 10000; position: absolute;">+</p>
+  <div><p class="item_title" style="color: white; position: absolute; font-size: 15px; margin-top: -10px; padding-left: 13px;">Xiaomi Mi A1 </p><img style="position: absolute; margin-right: 150px; padding-top: 50px; width: 390px; height: 430px;" src="http://i01.appmifile.com/webfile/globalimg/ru/banner/ii-mia1.jpg?width=612&height=612"></div></div>
+
+
+
+
+
+
+
+<div style="margin-top: 40px;" class="item_box">
+<button title="добавить в корзину" id="add_item" data-id="3" class="button" style="background-color: teal; z-index: 2000;  height: 20px; margin-top: -30px; position: absolute; border-radius: 5px;"></button><p title="добавить в корзину" style="margin-left: 10px; margin-top: -50px; color: white; z-index: 10000; position: absolute;">+</p>
+  <div><p class="item_title" style="color: white; position: absolute; font-size: 15px; margin-top: -10px; padding-left: 13px;">Xiaomi Redmi Note 4X</p><img style="position: absolute; margin-right: 150px; padding-top: 50px; width: 390px; height: 430px;" src="https://smartbobr.ru/wp-content/uploads/2017/08/xiaomi_redmi_4x_note_off_main_0.jpg"></div></div>  
+
+
+
+
+
+<div style="margin-top: 40px;" class="item_box">
+  <button id="add_item" title="добавить в корзину" data-id="4" class="button" style="background-color: teal; z-index: 2000;  height: 20px; margin-top: -30px; position: absolute; border-radius: 5px;"></button><p title="добавить в корзину" style="margin-left: 10px; margin-top: -50px; color: white; z-index: 10000; position: absolute;">+</p>
+  <div><p class="item_title" style="color: white; position: absolute; font-size: 15px; margin-top: -10px; padding-left: 13px;">Xiaomi Mi Max 2 </p><img style="position: absolute; margin-right: 150px; padding-top: 50px; width: 390px; height: 430px;" src="http://img.dxcdn.com/productimages/sku_485836_1.jpg"></div></div>
+
+
+
+
+
+
+    <div style="margin-top: 40px;" class="item_box">
+  <button title="добавить в корзину" id="add_item" data-id="5" class="button" style="background-color: teal; z-index: 2000;  height: 20px; margin-top: -30px; position: absolute; border-radius: 5px;"></button><p title="добавить в корзину" style="margin-left: 10px; margin-top: -50px; color: white; z-index: 10000; position: absolute;">+</p>
+  <div><p class="item_title" style="color: white; position: absolute; font-size: 15px; margin-top: -10px; padding-left: 13px;">Xiaomi Mi Mix 2</p><img style="position: absolute; margin-right: 150px; padding-top: 50px; width: 390px; height: 430px;" src="https://gloimg.gbtcdn.com/gb/pdm-product-pic/Electronic/2017/09/13/goods-img/1505267466906727578.jpg"></div></div>
+
+
+
+
+<div style="margin-top: 40px;" class="item_box">
+  <button title="добавить в корзину" id="add_item" data-id="6" class="button" style="background-color: teal; z-index: 2000;  height: 20px; margin-top: -30px; position: absolute; border-radius: 5px;"></button><p title="добавить в корзину" style="margin-left: 10px; margin-top: -50px; color: white; z-index: 10000; position: absolute;">+</p>
+  <div><p class="item_title" style="color: white; position: absolute; font-size: 15px; margin-top: -10px; padding-left: 13px;">Xiaomi Mi 6</p><img style="position: absolute; margin-right: 150px; padding-top: 50px; width: 390px; height: 430px;" src="http://a1.amlimg.com/MDc5M2U3YWZjYmVmNTM2NTIyY2M5NWJmNTE2MzIyOWNoAoUPZNmcA_td4S58L-WeaHR0cDovL21lZGlhLmFkc2ltZy5jb20vZDIwZTYyYjYzZmFhMzkxOTZkOGQ4Nzk1ZGZjN2E4NDU0OTM4MDQ4YWFlMzE0NGQ3NTEwOGI3Mjc2NmNlZjlhNy5qcGd8fHx8fHw1MTh4NTI1fGh0dHA6Ly93d3cuYWR2ZXJ0cy5pZS9zdGF0aWMvaS93YXRlcm1hcmsucG5nfHx8.jpg"></div></div>
+
+
+
+
+
+
+
+  <div style="margin-top: 40px;" class="item_box">
+ <button id="add_item" data-id="7" title="добавить в корзину" class="button" style="background-color: teal; z-index: 2000;  height: 20px; margin-top: -30px; position: absolute; border-radius: 5px;"></button><p title="добавить в корзину" style="margin-left: 10px; margin-top: -50px; color: white; z-index: 10000; position: absolute;">+</p>
+  <div><p class="item_title" style="color: white; position: absolute; font-size: 15px; margin-top: -10px; padding-left: 13px;">Xiaomi Mi 5X</p><img style="position: absolute; margin-right: 150px; padding-top: 50px; width: 390px; height: 430px;" src="https://www.honorbuy.com/4589-thickbox_default/xiaomi-mi-5x-smartphone-gold.jpg"></div></div>
+
+
+
+
+
+
+   <div style="margin-top: 40px;" class="item_box">
+  <button title="добавить в корзину" id="add_item" data-id="8" class="button" style="background-color: teal; z-index: 2000;  height: 20px; margin-top: -30px; position: absolute; border-radius: 5px;"></button><p title="добавить в корзину" style="margin-left: 10px; margin-top: -50px; color: white; z-index: 10000; position: absolute;">+</p>
+  <div><p class="item_title" style="color: white; position: absolute; font-size: 15px; margin-top: -10px; padding-left: 13px;">Xiaomi Redmi 4A</p><img style="position: absolute; margin-right: 150px; padding-top: 50px; width: 390px; height: 430px;" src="https://image4.geekbuying.com/ggo_pic/2017-03-27/Xiaomi-Redmi-4A-2GB-16GB-Smartphone---Gray-405143-.jpg"></div></div>
+
+
+
+
+
+
+
+   <div style="margin-top: 40px;" class="item_box">
+<button title="добавить в корзину" id="add_item" data-id="9" class="button" style="background-color: teal; z-index: 2000;  height: 20px; margin-top: -30px; position: absolute; border-radius: 5px;"></button><p title="добавить в корзину" style="margin-left: 10px; margin-top: -50px; color: white; z-index: 10000; position: absolute;">+</p>
+  <div><p class="item_title" style="color: white; position: absolute; font-size: 15px; margin-top: -10px; padding-left: 13px;">Xiaomi Redmi Note 4 Pro </p><img style="position: absolute; margin-right: 150px; padding-top: 50px; width: 390px; height: 430px;" src="https://image4.geekbuying.com/ggo_pic/2016-11-05/Xiaomi-Redmi-4-Pro-3GB-32GB-Smartphone---Black-385505-.jpg"></div>
+
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n){
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n){
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n){
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+
+    if(n > slides.length){
+        slideIndex = 1;
+    }
+    if(n < 1){
+        slideIndex = slides.length;
+    }
+    for(i=0; i<slides.length; i++){
+        slides[i].style.display = "none";
+    }
+    for(i=0; i < dots.length; i++){
+        dots[i].className = dots[i].className.replace("active","");
+    }
+     slides[slideIndex-1].style.display = "block";
+     dots[slideIndex-1].className+= " active";
+}
+
+function slideTime(n){
+ n=1
+ showSlides(slideIndex += n);
+ }
+setInterval(slideTime, 10000);
+</script>
+<script type="text/javascript" src="w3.js"></script>
+</body>
+</html>
